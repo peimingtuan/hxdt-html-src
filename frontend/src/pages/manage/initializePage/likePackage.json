@@ -1,0 +1,26 @@
+{
+  "id": 11,
+  "zh_name": "系统初始化页面",
+  "name": "initializePage",
+  "group": "manage",
+  "copy": true,
+  "bundle_vendor": false,
+  "dll":[
+    "vuer"
+  ],
+  "input_file": {
+    "index": [
+      "index.js"
+    ]
+  },
+  "output_file": {
+    "path": "/dist/manage/initializePage/",
+    "publicPath": "/",
+    "filename": "js/manage_initializePage/[name].js"
+  },
+  "template": {
+    "list": [
+      "index.html"
+    ]
+  }
+}

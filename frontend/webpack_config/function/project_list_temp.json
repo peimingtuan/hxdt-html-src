@@ -1,0 +1,588 @@
+{
+	"read_time": "96ms",
+	"process_time": "16ms",
+	"total_time": "112ms",
+	"list": [
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/arpos",
+			"id": 1,
+			"name": "arpos",
+			"name_zh": "应诉平台",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": false,
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/arpos/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_arpos",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/arpos/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/arpos/",
+				"filename": "js/manage_arpos/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/arpos2",
+			"id": 2,
+			"name": "arpos2",
+			"name_zh": "应诉平台2",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": false,
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/arpos2/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_arpos2",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/arpos2/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/arpos2/",
+				"filename": "js/manage_arpos2/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms",
+			"id": 3,
+			"name": "ecms",
+			"name_zh": "智慧法庭应用支撑平台",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": {
+				"directory": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/",
+				"files": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/manage/ecms"
+			},
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_ecms",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/ecms/",
+				"filename": "js/manage_ecms/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms2",
+			"id": 4,
+			"name": "ecms2",
+			"name_zh": "智慧法庭应用支撑平台2",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": false,
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms2/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_ecms2",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms2/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/ecms2/",
+				"filename": "js/manage_ecms2/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/suitLaw",
+			"id": 5,
+			"name": "suitLaw",
+			"name_zh": "相关法律",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": {
+				"directory": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/",
+				"files": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/manage/suitLaw"
+			},
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/suitLaw/index.pug"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_suitLaw",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/suitLaw/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/suitLaw/",
+				"filename": "js/manage_suitLaw/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/josWeb",
+			"id": 7,
+			"name": "josWeb",
+			"name_zh": "庭审提纲、争议焦点",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": {
+				"directory": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/",
+				"files": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/manage/josWeb"
+			},
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/josWeb/index.pug"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_josWeb",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/josWeb/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/josWeb/",
+				"filename": "js/manage_josWeb/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/posWebfirst",
+			"id": 8,
+			"name": "posWebfirst",
+			"name_zh": "当事人首页",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": {
+				"directory": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/",
+				"files": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/manage/posWebfirst"
+			},
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/posWebfirst/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_posWebfirst",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/posWebfirst/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/posWebfirst/",
+				"filename": "js/manage_posWebfirst/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/webConfig",
+			"id": 9,
+			"name": "webConfig",
+			"name_zh": "配置页面",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": {
+				"directory": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/",
+				"files": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/manage/webConfig"
+			},
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/webConfig/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_webConfig",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/webConfig/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/webConfig/",
+				"filename": "js/manage_webConfig/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/initializePage",
+			"id": 11,
+			"name": "initializePage",
+			"name_zh": "系统初始化页面",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": {
+				"directory": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/",
+				"files": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/manage/initializePage"
+			},
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/initializePage/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_initializePage",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/initializePage/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/initializePage/",
+				"filename": "js/manage_initializePage/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/chat",
+			"id": 12,
+			"name": "chat",
+			"name_zh": "智慧法庭应用支撑平台",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": {
+				"directory": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/",
+				"files": "/Users/aven-pei/Documents/svn/develop/hxdt-html/frontendDist/manage/chat"
+			},
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/chat/index.pug"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_chat",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/chat/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/chat/",
+				"filename": "js/manage_chat/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms3",
+			"id": 13,
+			"name": "ecms3",
+			"name_zh": "智慧法庭应用支撑平台3",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": false,
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms3/index.pug"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_ecms3",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ecms3/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/ecms3/",
+				"filename": "js/manage_ecms3/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ostPlayer",
+			"id": 14,
+			"name": "ostPlayer",
+			"name_zh": "原声播放器",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": false,
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ostPlayer/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_ostPlayer",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/ostPlayer/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/ostPlayer/",
+				"filename": "js/manage_ostPlayer/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/causeTree",
+			"id": 15,
+			"name": "causeTree",
+			"name_zh": "案由树",
+			"group": "manage",
+			"bundle_vendor": false,
+			"dll": [
+				"vuer"
+			],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": false,
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/causeTree/index.html"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "manage_causeTree",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/manage/causeTree/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/manage/causeTree/",
+				"filename": "js/manage_causeTree/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/web/dossier",
+			"id": 201,
+			"name": "dossier",
+			"name_zh": "卷宗授权",
+			"group": "web",
+			"bundle_vendor": false,
+			"dll": [],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": false,
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/web/dossier/index.pug"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "web_dossier",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/web/dossier/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/web/dossier/",
+				"filename": "js/web_dossier/[name].[chunkhash:6].js"
+			}
+		},
+		{
+			"isProduction": true,
+			"src_path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/web/evidence",
+			"id": 202,
+			"name": "evidence",
+			"name_zh": "提交证据",
+			"group": "web",
+			"bundle_vendor": false,
+			"dll": [],
+			"useHash": true,
+			"manualVersion": "",
+			"hash_js": "[chunkhash:6].",
+			"hash_css": "[contenthash:6].",
+			"all_in_html": false,
+			"copy": false,
+			"template": {
+				"list": [
+					{
+						"filename": "index",
+						"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/web/evidence/index.pug"
+					}
+				],
+				"importAll": false
+			},
+			"staticDirName": "web_evidence",
+			"input_file": {
+				"index": [
+					"/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/src/pages/web/evidence/index.js"
+				]
+			},
+			"output_file": {
+				"publicPath": "./",
+				"path": "/Users/aven-pei/Documents/svn/develop/hxdt-html-src/frontend/dist/web/evidence/",
+				"filename": "js/web_evidence/[name].[chunkhash:6].js"
+			}
+		}
+	]
+}

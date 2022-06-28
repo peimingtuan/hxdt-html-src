@@ -1,0 +1,26 @@
+{
+  "id":15,
+  "zh_name": "案由树",
+  "name": "causeTree",
+  "group": "manage",
+  "copy": false,
+  "bundle_vendor": false,
+  "dll":[
+    "vuer"
+  ],
+  "input_file": {
+    "index": [
+      "index.js"
+    ]
+  },
+  "output_file": {
+    "path": "/dist/manage/causeTree/",
+    "publicPath": "/",
+    "filename": "js/manage_causeTree/[name].js"
+  },
+  "template": {
+    "list": [
+      "index.html"
+    ]
+  }
+}

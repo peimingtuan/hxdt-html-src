@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "zh_name": "应诉平台",
+  "name": "arpos",
+  "group": "manage",
+  "copy": false,
+  "bundle_vendor": false,
+  "dll":[
+    "vuer"
+  ],
+  "input_file": {
+    "index": [
+      "index.js"
+    ]
+  },
+  "output_file": {
+    "path": "/dist/manage/arpos/",
+    "publicPath": "/",
+    "filename": "js/manage_arpos/[name].js"
+  },
+  "template": {
+    "list": [
+      "index.html"
+    ]
+  }
+}

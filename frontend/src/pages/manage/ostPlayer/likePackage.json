@@ -1,0 +1,23 @@
+{
+  "id": 14,
+  "zh_name": "原声播放器",
+  "name": "ostPlayer",
+  "group": "manage",
+  "bundle_vendor": false,
+  "copy": false,
+  "input_file": {
+    "index": [
+      "index.js"
+    ]
+  },
+  "output_file": {
+    "path": "/dist/manage/ostPlayer/",
+    "publicPath": "/",
+    "filename": "js/manage_ostPlayer/[name].js"
+  },
+  "template": {
+    "list": [
+      "index.html"
+    ]
+  }
+}

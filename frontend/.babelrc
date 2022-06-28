@@ -1,0 +1,46 @@
+//.babelrc
+{
+  "presets": [
+    [
+      "es2015",
+      {"modules":false}
+    ],
+    "react",
+    "stage-2"
+  ],
+  "plugins": [
+//    [
+//      "component",
+//      {
+//        "libraryName": "element-ui",
+//        "styleLibraryName": "theme-chalk"
+//      }
+//    ],
+//    [
+//      "component",
+//      {
+//        "libraryName": "mint-ui",
+//        "style": true
+//      }
+//    ],
+    [
+      "component",
+      [{
+        "libraryName": "mint-ui",
+        "style": true
+      },
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-chalk"
+        }]
+    ],
+    [
+    "transform-runtime",
+    {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true,
+      "moduleName": "babel-runtime"
+    }
+  ]]
+}

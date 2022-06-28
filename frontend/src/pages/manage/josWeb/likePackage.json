@@ -1,0 +1,26 @@
+{
+  "id":7,
+  "zh_name": "庭审提纲、争议焦点",
+  "name": "josWeb",
+  "group": "manage",
+  "copy": true,
+  "bundle_vendor": false,
+  "dll":[
+    "vuer"
+  ],
+  "input_file": {
+    "index": [
+      "index.js"
+    ]
+  },
+  "output_file": {
+    "path": "/dist/manage/josWeb/",
+    "publicPath": "/",
+    "filename": "js/manage_josWeb/[name].js"
+  },
+  "template": {
+    "list": [
+      "index.pug"
+    ]
+  }
+}

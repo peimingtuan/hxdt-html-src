@@ -1,0 +1,190 @@
+<template>
+    <!--测试video-->
+    <div class="videoPlayer" id="videoContainer">
+        <video id="video" width="600" height="360" preload controls>
+            <source src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4" type='video/mp4'>
+            <source src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.ogg" type='video/ogg'>
+        </video>
+        <div id="videoControls">
+            <div id="progressWrap">
+                <div id="playProgress">
+                    <span id="showProgress">0</span>
+                </div>
+            </div>
+            <div>
+                <button id="playBtn" title="Play">播放</button>
+                <button id="fullScreenBtn" title="FullScreen Toggle">全屏</button>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "testvideo",
+        data() {
+            return {}
+        },
+        beforeCreate() {
+
+        },
+        created() {
+
+        },
+        mounted() {
+            (function(window, document){
+                // 获取要操作的元素
+                let video = document.getElementById("video"),
+                    videoControls = document.getElementById("videoControls"),
+                    videoContainer = document.getElementById("videoContainer"),
+                    playBtn = document.getElementById("playBtn"),
+                    fullScreenBtn = document.getElementById("fullScreenBtn"),
+                    progressWrap = document.getElementById("progressWrap"),
+                    playProgress = document.getElementById("playProgress"),
+                    fullScreenFlag = false;
+                let progressFlag;
+                // 创建我们的操作对象，我们的所有操作都在这个对象上。
+                let videoPlayer = {
+                    init: function(){
+                        //video.removeAttribute("controls");
+                        //bindEvent(video, "loadeddata", videoPlayer.initControls);
+                        //videoPlayer.operateControls();
+                    },
+                    initControls: function(){
+                        videoPlayer.showHideControls();
+                    },
+                    showHideControls: function(){
+                        bindEvent(video, "mouseover", showControls);
+                        bindEvent(videoControls, "mouseover", showControls);
+                        bindEvent(video, "mouseout", hideControls);
+                        bindEvent(videoControls, "mouseout", hideControls);
+                    },
+                    operateControls: function(){
+                        bindEvent(playBtn, "click", play);
+                        bindEvent(video, "click", play);
+                        bindEvent(fullScreenBtn, "click", fullScreen);
+                        bindEvent(progressWrap, "mousedown", videoSeek);
+                    }
+                }
+
+                videoPlayer.init();
+
+                // 原生的JavaScript事件绑定函数
+                function bindEvent(ele,eventName,func){
+                    if(window.addEventListener){
+                        ele.addEventListener(eventName, func);
+                    }
+                    else{
+                        ele.attachEvent('on' + eventName, func);
+                    }
+                }
+                // 显示video的控制面板
+                function showControls(){
+                    videoControls.style.opacity = 1;
+                }
+                // 隐藏video的控制面板
+                function hideControls(){
+                    // 为了让控制面板一直出现，我把videoControls.style.opacity的值改为1
+                    videoControls.style.opacity = 1;
+                }
+                // 控制video的播放
+                function play(){
+                    if ( video.paused || video.ended ){
+                        if ( video.ended ){
+                            video.currentTime = 0;
+                        }
+                        video.play();
+                        playBtn.innerHTML = "暂停";
+                        progressFlag = setInterval(getProgress, 60);
+                    }
+                    else{
+                        video.pause();
+                        playBtn.innerHTML = "播放";
+                        clearInterval(progressFlag);
+                    }
+                }
+                // 控制video是否全屏，额这一部分没有实现好，以后有空我会接着研究一下
+                function fullScreen(){
+                    if(fullScreenFlag){
+                        videoContainer.webkitCancelFullScreen();
+                    }
+                    else{
+                        videoContainer.webkitRequestFullscreen();
+                    }
+                }
+                // video的播放条
+                function getProgress(){
+                    let percent = video.currentTime / video.duration;
+                    playProgress.style.width = percent * (progressWrap.offsetWidth) - 2 + "px";
+                    showProgress.innerHTML = (percent * 100).toFixed(1) + "%";
+                }
+                // 鼠标在播放条上点击时进行捕获并进行处理
+                function videoSeek(e){
+                    if(video.paused || video.ended){
+                        play();
+                        enhanceVideoSeek(e);
+                    }
+                    else{
+                        enhanceVideoSeek(e);
+                    }
+
+                }
+                function enhanceVideoSeek(e){
+                    clearInterval(progressFlag);
+                    var length = e.pageX - progressWrap.offsetLeft;
+                    var percent = length / progressWrap.offsetWidth;
+                    playProgress.style.width = percent * (progressWrap.offsetWidth) - 2 + "px";
+                    video.currentTime = percent * video.duration;
+                    progressFlag = setInterval(getProgress, 60);
+                }
+
+            }(this, document))
+        },
+        destroyed() {
+
+        },
+        methods: {}
+    }
+</script>
+
+<style scoped>
+    /*video测试*/
+    /*.videoPlayer{*/
+    /*border: 1px solid #000;*/
+    /*width: 600px;*/
+    /*}*/
+    /*#video{*/
+    /*margin-top: 0px;*/
+    /*}*/
+    /*#videoControls{*/
+    /*width: 600px;*/
+    /*margin-top: 0px;*/
+    /*}*/
+    .show{
+        opacity: 1;
+    }
+    .hide{
+        opacity: 0;
+    }
+    #video{
+        width:3rem;
+        height:3rem;
+    }
+    #progressWrap{
+        background-color: black;
+        height: 25px;
+        cursor: pointer;
+    }
+    #playProgress{
+        background-color: red;
+        width: 0px;
+        height: 25px;
+        border-right: 2px solid blue;
+    }
+    #showProgress{
+        /*background-color: ;*/
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 25px;
+    }
+</style>

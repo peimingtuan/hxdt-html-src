@@ -1,0 +1,250 @@
+* {
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:after, :before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+body {
+    width:100%;
+    height: 100%;
+}
+
+.isedit{
+color: #3b94ee;
+}
+
+//分页
+.up{
+    /*分页*/
+    .page{
+        margin:20px 0;
+        span{
+            font-size: 14px;
+        }
+        input{
+            font-size: 14px;
+        }
+        text-align: center;
+        li.number{
+            font-size: 14px;
+        }
+    }
+}
+
+
+//表格
+.table-style{
+    cursor:pointer;
+    th,td{
+        text-align:center;
+        // padding:15px 0;
+    }
+    th{
+        background:#f3f7fa;
+        div{
+         font-size: 14px;
+        }
+    }
+    td{
+        div{
+            font-size: 14px;
+            span{
+                font-size: 14px;
+            }
+        }
+        div.isedit span{
+            color:#3b94ee;
+            margin-right:1px;
+        }
+    }
+    /*暂无数据*/
+    .el-table__empty-text{
+        font-size: 14px;
+    }
+}
+html,
+body,
+div,
+span,
+p,
+a,
+em,
+img,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h2,
+h3 {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+a:hover {
+    outline: none;
+}
+
+.none {
+    display: none !important;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+img {
+    outline: none;
+    vertical-align: middle;
+}
+
+.inline {
+    display: inline !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+ul, ol {
+    list-style: none;
+    -webkit-margin-after: 0;
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 0;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #b0b0b0;
+}
+
+/*element ui 样式*/
+//警告框
+.el-message{
+    min-width:380px!important;
+    top:50px!important;
+    padding:20px 15px 20px 20px !important;
+    .el-message__content{
+        font-size:18px!important;
+    }
+    .el-message__icon{
+        font-size:18px!important;
+    }
+
+    .el-message__closeBtn:before{
+        font-size:22px!important;
+    }
+}
+//加载loading
+.el-loading-spinner{
+    .el-icon-loading{
+        font-size:50px!important;
+        &:before{
+            font-size:50px!important;
+        }
+    }
+    .el-loading-text{
+        font-size:20px!important;
+    }
+}
+
+/**
+    动画
+*/
+//渐变
+.fade-enter-active,.fade-leave-active{
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to{
+    opacity: 0;
+}
+//动画
+.slide-up-enter-active, .slide-up-leave-active{
+    transition: all .35s;
+}
+.slide-up-enter, .slide-up-leave-to{
+    transform: translateY(100%)
+}
+.slide-down-enter-active, .slide-down-leave-active{
+    transition: all .35s;
+}
+.slide-down-enter, .slide-down-leave-to{
+    transform: translateY(-100%)
+}
+.slide-left-enter-active, .slide-left-leave-active{
+    transition: all .35s;
+}
+.slide-left-enter, .slide-left-leave-to{
+    transform: translateX(-100%)
+}
+.slide-right-enter-active, .slide-right-leave-active{
+    transition: all .35s;
+}
+.slide-right-enter, .slide-right-leave-to{
+    transform: translateX(100%)
+}
+//动画加渐变
+.slide-fade-enter-active {
+    transition: all .35s ease;
+}
+.slide-fade-leave-active {
+    transition: all .35s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+    //transform: translateX(100%);
+    transform: translateX(50px);
+    opacity: 0;
+}
+//用于路由
+.slide2-fade-enter-active {
+    transition: all .35s cubic-bezier(1.0, 0.5, 0.8, 1);
+}
+.slide2-fade-enter{
+    //transform: translateX(100%);
+    transform: translateX(100px);
+    opacity: 0;
+}
+//列表排序
+.flip-list-move{
+    transition: transform 1s;
+}
+//自定义动画
+.bounce-enter-active {
+    animation: bounce-in .5s;
+}
+.bounce-leave-active {
+    animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

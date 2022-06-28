@@ -1,0 +1,200 @@
+<template>
+    <div class="trialtabpane6">
+        <div class="top">
+            <div class="le">
+                <div class="add" @click="add()">
+                    <img src="../images/yingyongpeizhi/add.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="table-style">
+            <el-table
+                    ref="multipleTable"
+                    :data="tableData"
+                    tooltip-effect="dark"
+                    style="width: 100%"
+                    @selection-change="handleSelectionChange">
+                <el-table-column type="selection"></el-table-column>
+                <el-table-column type="index" label="序号" width="100px">
+                </el-table-column>
+                <el-table-column prop="courtName" label="法院" show-overflow-tooltip>
+                </el-table-column>
+                <el-table-column prop="caseTypeName" label="案件类型" show-overflow-tooltip>
+                </el-table-column>
+                <el-table-column  label="类别" >
+                    <template slot-scope="scope">
+                        <span v-if="scope.row.type==2">法庭纪律</span>
+                        <span v-else>权利义务</span>
+                    </template>
+                </el-table-column>
+                <el-table-column prop="content" label="文本" show-overflow-tooltip>
+                </el-table-column>
+                <el-table-column label="操作">
+                    <template slot-scope="scope">
+                        <div class="isedit">
+                            <span @click="edit(scope.$index, scope.row)">修改</span>
+                            <span @click="delinfo(scope.$index, scope.row)">删除</span>
+                        </div>
+                    </template>
+                </el-table-column>
+            </el-table>
+        </div>
+        <div class="up">
+            <!--分页-->
+            <el-pagination
+                    class="page"
+                    background
+                    @current-change="handleCurrentChange"
+                    :current-page=1
+                    :page-size=10
+                    layout="total, prev, pager, next, jumper"
+                    :total=total>
+            </el-pagination>
+        </div>
+        <!--添加弹框-->
+        <addtrialAlert6 ref="addtrialAlert6" :alertshow="ismain" @selectshow="ismain=false" @qure="addlawsure" @cancel="ismain=false"/>
+    </div>
+</template>
+
+<script>
+    import addtrialAlert6 from "./addtrialAlert6" //添加弹框
+    export default {
+        name: "trialtabpane6",
+        components: {
+            addtrialAlert6
+        },
+        data() {
+            return {
+                ismain:false,
+                input:"",//搜索
+                tableData:[],//纪律、权利义务配置列表,
+                total:0,
+                pageIndex:1,
+                pageSize:10,
+                multipleSelection:[]
+            }
+        },
+        created() {
+            this.getVoiceAnnouncements();
+        },
+        mounted() {
+
+        },
+        destroyed() {
+
+        },
+        methods: {
+            //获取法庭纪律、权利义务配置列表
+            getVoiceAnnouncements(){
+                let {pageIndex,pageSize}=this;
+                let _this=this;
+                return _this.$http.post('/voiceAnnouncements/getVoiceAnnouncements',{
+                    pageIndex,//当前页码
+                    pageSize //每页大小
+                }).then(data =>{
+                    if(data.code===200){
+                        _this.total=data.count;
+                        _this.tableData=data.data;
+                    }else{
+                        _this.$msgw(data.message);
+                    }
+                }).catch(err => {
+                    console.log(err,'/voiceAnnouncements/getVoiceAnnouncements')
+                    _this.$msge('服务器异常，请稍后重试');
+                })
+            },
+            //添加弹框
+            add(){
+                this.ismain=true;
+                this.$refs.addtrialAlert6.show();
+            },
+            //关闭添加弹框
+            addlawsure(){
+                let _this=this;
+                if(_this.$refs.addtrialAlert6.values.length===0){
+                    _this.$msgw('请选择案件类型');
+                    return
+                }
+                _this.$refs.addtrialAlert6.saveVoiceAnnouncements().then(data=>{
+                    if(data.code===200){
+                        _this.ismain=false;
+                        _this.getVoiceAnnouncements();
+                    }else if(data.code===303){//异常处理
+                        _this.ismain=false;
+                    }
+                })
+            },
+            //修改当前行信息
+            edit(index,row){
+                this.ismain=true;
+                this.$refs.addtrialAlert6.show(row);
+            },
+            //删除当前行内容
+            delinfo(index,row){
+                let _this=this;
+                _this.$confirm('确认删除', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    _this.$http.post('/voiceAnnouncements/delVoiceAnnouncement', {
+                        id:row.id//要删除行的法庭纪律、权利义务 id
+                    }).then(data =>{
+                        if(data.code===200){
+                            _this.$msgs('删除成功!');
+                            //计算总页数
+                            if(index==0 && Math.ceil(Number(_this.total)/10)==Number(_this.pageIndex) && _this.pageIndex!=1 && Number(_this.total)%10==1){
+                                _this.pageIndex=Number(_this.pageIndex)-1;
+                            }
+                            _this.getVoiceAnnouncements();
+                        }else{
+                            _this.$msgw(data.message);
+                        }
+                    }).catch(err => {
+                        console.log(err,'/voiceAnnouncements/delVoiceAnnouncement')
+                        _this.$msge('服务器异常，请稍后重试');
+                    })
+                }).catch(() => {
+
+                });
+            },
+            //checkbox,当选择项发生变化时会触发该事件
+            handleSelectionChange(val) {
+                console.log(val)
+                this.multipleSelection = val;
+            },
+            //分页信息
+            //当前页数
+            handleCurrentChange(page){
+                this.pageIndex=page;
+                this.getVoiceAnnouncements();
+            },
+        }
+    }
+</script>
+
+<style lang="less">
+    @import url('../css/common.less');
+    .trialtabpane6{
+        .mr();
+        /*头部内容*/
+        .top{
+            margin-bottom:.2rem;
+            .fb();
+            .le{
+                .fl();
+                cursor:pointer;
+                &>div.add{
+                    img{
+                        width:.8rem;
+                    }
+                }
+            }
+        }
+        /*内容展示区域*/
+        @import url('../css/element.less');
+    }
+</style>
+<style scoped>
+    @import url('../css/uppage.less');
+</style>

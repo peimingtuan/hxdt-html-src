@@ -1,0 +1,26 @@
+{
+  "id":9,
+  "zh_name": "配置页面",
+  "name": "webConfig",
+  "group": "manage",
+  "copy": true,
+  "bundle_vendor": false,
+  "dll":[
+    "vuer"
+  ],
+  "input_file": {
+    "index": [
+      "index.js"
+    ]
+  },
+  "output_file": {
+    "path": "/dist/manage/webConfig/",
+    "publicPath": "/",
+    "filename": "js/manage_webConfig/[name].js"
+  },
+  "template": {
+    "list": [
+      "index.html"
+    ]
+  }
+}

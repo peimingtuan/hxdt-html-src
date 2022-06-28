@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>智慧法庭应用支撑平台</title>
+    <script FOR="foo" EVENT="OnObjectReady(objObject,objAsyncContext)" LANGUAGE="JScript">
+        var IPEnabled = objObject.IPEnabled;
+        var IPAddress = objObject.IPAddress(0);
+        if (IPEnabled != null && IPEnabled != "undefined" && IPEnabled == true) {
+            if (IPAddress) {
+                window.sIPAddr = objObject.IPAddress(0);
+            }
+            if (objObject.MACAddress) {
+                window.sMacAddr = objObject.MACAddress;
+            }
+            if (objObject.DNSHostName) {
+                window.sDNSName = objObject.DNSHostName;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function init() {
+            if (!!window.ActiveXObject || "ActiveXObject" in window) {
+                var service = locator.ConnectServer();
+                service.Security_.ImpersonationLevel = 3;
+                service.InstancesOfAsync(foo, 'Win32_NetworkAdapterConfiguration');
+                setTimeout(function () {
+                    sessionStorage.setItem('MACAddr', unescape(sMacAddr));
+                    sessionStorage.setItem('IPAddr', unescape(sIPAddr));
+                }, 6000)
+            }
+        }
+    </script>
+    <style>
+        html {
+            /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+            /*对IE暂不做限制*/
+            /*-ms-overflow-style: none;*/
+            /*火狐下隐藏滚动条*/
+            overflow: -moz-scrollbars-none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+        *::-webkit-scrollbar{
+            /*滚动条整体样式*/
+            width:0px;
+            /*高宽分别对应横竖滚动条的尺寸*/
+            height:10px;
+        }
+
+        *:hover::-webkit-scrollbar {
+            /*width: 10px;*/
+        }
+
+        *::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            box-shadow: inset 0 0 0 5px rgb(250,250,250);
+            /* 用box-shadow模拟滚动条 */
+        }
+
+        *::-webkit-scrollbar-track {
+            /*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background: #ededed;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <div id="app"></div>
+    <object classid="CLSID:76A64158-CB41-11D1-8B02-00600806D9B6" id="locator"
+            style="display:none;visibility:hidden" width="0"
+            height="0"></object>
+    <object classid="CLSID:75718C9A-F029-11d1-A1AC-00C04FB6C223" id="foo"
+            style="display:none;visibility:hidden" width="0"
+            height="0"></object>
+    <object id="StartBurnControl" classid="clsid:CDFA0CD4-381B-412D-B7BD-1DBFCD9021AA"
+            style="display:none;visibility:hidden" width="0"
+            height="0"></object>
+</body>
+
+</html>

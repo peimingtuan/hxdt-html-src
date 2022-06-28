@@ -1,0 +1,26 @@
+{
+  "id": 5,
+  "zh_name": "相关法律",
+  "name": "suitLaw",
+  "group": "manage",
+  "copy": true,
+  "bundle_vendor": false,
+  "dll":[
+    "vuer"
+  ],
+  "input_file": {
+    "index": [
+      "index.js"
+    ]
+  },
+  "output_file": {
+    "path": "/dist/manage/suitLaw/",
+    "publicPath": "/",
+    "filename": "js/manage_suitLaw/[name].js"
+  },
+  "template": {
+    "list": [
+      "index.pug"
+    ]
+  }
+}

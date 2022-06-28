@@ -1,0 +1,52 @@
+@import url('./common.less');
+//分页
+.up{
+                /*分页*/
+                .page{
+                    margin:.2rem 0;
+                    span{
+                        font-size: 0.18rem;
+                    }
+                    input{
+                        font-size: 0.18rem;
+                    }
+                    text-align:center;
+                    li.number{
+                        font-size: 0.18rem;
+
+                    }
+                }
+}
+//表格
+.casetable{
+    margin-top:0.2rem;
+    cursor:pointer;
+    th,td{
+        padding:.16rem 0;
+        text-align:center;
+    }
+    th{
+        background:#cbe5f3;
+        div{
+            .f20()
+        }
+    }
+    td{
+        // padding:0.16rem 0;
+        div{
+            .f18();
+            span{
+                .f18()
+            }
+        }
+        div.isedit span{
+            color:#409EFF;
+            margin-right:.1rem;
+        }
+    }
+    /*暂无数据*/
+    .el-table__empty-text{
+        .f18();
+    }
+}
+

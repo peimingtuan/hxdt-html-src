@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>庭审视频</title>
+<style>
+A:link {
+	color: #FF0000;
+	text-decoration: underline;
+}
+
+A:visited {
+	TEXT-DECORATION: none;
+}
+
+A:hover, A:active {
+	COLOR: #C41800;
+	TEXT-DECORATION: none;
+}
+
+.download_none {
+	display: none !important;
+}
+
+.download_show {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: black;
+	font-size: 18px;
+}
+
+.player_none {
+	display: none !important;
+}
+
+.player_show {
+	display: inline;
+}
+</style>
+<script src="./js2/jquery-1.12.4.min.js" type="text/javascript"
+	charset="GBK"></script>
+<script type="text/javascript" charset="GBK">
+
+    var isResize = false;
+	
+	window.onresize = playerResize;
+	function playerResize(){
+	    if(isResize) {
+          var playOcx = document.getElementById('PBMOCX');
+		  playOcx.width = document.documentElement.clientWidth;
+		  playOcx.height = document.documentElement.clientHeight - 20;
+	    }
+	}
+	/*
+	 * 判断是否为IE浏览器
+	 */
+	function isIE() {
+		if (!!window.ActiveXObject || "ActiveXObject" in window) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function getUrlParam(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) {
+			return decodeURIComponent(r[2]);
+		} else {
+			return "";
+		}
+	}
+
+	/*
+	 * 转成GBK字符集
+	 */
+	function ReChange(pValue) {
+		return unescape(pValue.replace(/&#x/g, '%u').replace(/\\u/g, '%u')
+				.replace(/;/g, ''));
+	}
+
+	/*
+	 * 转换URL
+	 */
+	function getApiUrl(url) {
+		var protocol = ''
+		var host = '/ecms/ecmsweb'
+		var route = /^\//.test(url) ? url : '/' + url
+		return protocol + host + route
+	}
+
+	function initData() {
+		if (isIE()) {
+			var isshow = getUrlParam('btn');
+			if (isshow == 2) {
+				startPlayVodXML(getUrlParam('videoFileStage'),
+						getUrlParam('caseInfoId'),
+						getUrlParam('choicecourtTime'));
+			} else if (isshow == 1) {
+				startPlayLiveXML(getUrlParam('trialPlanId'));
+			}
+		} else {
+			alert("该播放器仅支持IE浏览器");
+			window.close();
+		}
+	}
+
+	/*
+	 * 开启播放器播放
+	 */
+	function startPlayer(playXML, errorMsg) {
+		if (errorMsg != "" && errorMsg != "null") {
+			alert(errorMsg);
+			window.close();
+        }
+		var playOcx = document.getElementById('PBMOCX');
+		try {
+			playOcx.ChnsysPBM_Start(playXML);
+			playOcx.width = document.documentElement.clientWidth;
+			playOcx.height = document.documentElement.clientHeight - 20;
+			isResize = true;
+		} catch(e) {
+			playOcx.width = 0;
+			playOcx.height = 0;
+			playOcx.className = "player_none";
+			getPlayerExeUrl();
+			document.getElementById("downloadPlayUrl").className = "download_show";
+		}
+	}
+
+	/*
+	 * 获取庭审直播XML协议
+	 */
+	function startPlayLiveXML(trialPlanId) {
+		var param = {
+			method : "",
+			"requestSource" : "",
+			"data" : {
+				"trialPlanId" : trialPlanId
+			}
+		};
+		$.ajax({
+			type : "post",
+			data : JSON.stringify(param),
+			url : getApiUrl('/courtRoomManage/nosecure/getLivePlayInfos'),
+			contentType : "application/json",
+			dataType : "json",
+			success : function(data) {
+				if (data.code === 200) {
+					startPlayer(ReChange(data.data.playXml) + "", "");
+				} else {
+					startPlayer("",data.message);
+				}
+			},
+			error : function(err) {
+				startPlayer("", "连接服务器失败，请稍后再试");
+			}
+		});
+	}
+
+	/*
+	 * 获取庭审点播XML协议
+	 */
+	function startPlayVodXML(videoFileStage, caseInfoId, courtTime) {
+		var param = {
+			method : "",
+			requestSource : "",
+			data : {
+				videoFileStage : videoFileStage,
+				caseInfoId : caseInfoId,
+				courtTime : courtTime
+			}
+		};
+		$.ajax({
+			type : "post",
+			data : JSON.stringify(param),
+			url : getApiUrl('/nosecure/videoManager/getvideoXmlByCaseTrial'),
+			contentType : "application/json",
+			dataType : "json",
+			success : function(data) {
+				if (data.code === 200) {
+					startPlayer(ReChange(data.data) + "", "");
+				} else {
+					startPlayer("", data.message);
+				}
+			},
+			error : function(err) {
+				startPlayer("", "连接服务器失败，请稍后再试");
+			}
+		});
+	}
+
+	function getPlayerExeUrl() {
+		var param = {
+			method : "",
+			requestSource : "",
+			data : {}
+		};
+		$.ajax({
+			type : "post",
+			data : JSON.stringify(param),
+			url : getApiUrl('/nosecure/softwareVersionManage/getPlayerAddress'),
+			contentType : "application/json",
+			dataType : "json",
+			success : function(data) {
+				if (data.code === 200) {
+					document.getElementById("downloadPlayUrl").innerHTML = "未安装播放器！<br /> 若未安装<a href='" + data.data.url + "'>点击此处播放器下载</a>";
+				} else {
+					document.getElementById("downloadPlayUrl").innerText = data.message + "";
+				}
+			},
+			error : function(err) {
+			   document.getElementById("downloadPlayUrl").innerText = '连接服务器失败，请稍后再试';
+			}
+		});
+	}
+
+	//关闭页面
+	function closePlayer() {
+		try {
+			var playOcx = document.getElementById('PBMOCX');
+			playOcx.ChnsysPBM_Stop();
+		} catch(e) {
+		}
+	}
+</script>
+</head>
+<body onload="initData()" onunload="closePlayer()">
+	<table border="0" cellpadding="0" cellspacing="0" align="left"
+		width="100%" height="100%">
+		<tr>
+			<td align="left"><object id="PBMOCX" name="PBMOCX"
+					class="player_show"
+					classid="clsid:FDE96237-3604-4707-ADD2-CA9B9EA47D8A" width="750" height="760"></object><span id="downloadPlayUrl" class="download_none"></span></td>
+		</tr>
+	</table>
+</body>
+</html>
